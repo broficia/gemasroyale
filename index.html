@@ -7,37 +7,59 @@
 
 <style>
 :root{
-  --blue:#1e3cff;
-  --blue-dark:#0b1a66;
-  --gold:#f5c542;
+  --bg:#0b0f2b;
+  --bg2:#121a4d;
+  --blue:#1f4bff;
   --purple:#7b4cff;
-  --bg:#0a0f2c;
-  --card:#121a4d;
-  --white:#ffffff;
+  --gold:#f5c542;
+  --text:#ffffff;
 }
 
-*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
 
 body{
   margin:0;
-  background:linear-gradient(180deg,var(--bg),var(--blue-dark));
-  color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--text);
 }
 
 .container{
-  max-width:900px;
+  max-width:960px;
   margin:auto;
   padding:24px;
 }
 
+.header{
+  background:#070b22;
+  padding:12px 0;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.marquee{
+  display:flex;
+  gap:24px;
+  white-space:nowrap;
+  animation:scroll 25s linear infinite;
+  font-weight:600;
+  font-size:.85rem;
+  opacity:.9;
+}
+
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
 .hero{
   text-align:center;
-  padding:40px 20px;
+  padding:48px 16px;
 }
 
 .hero h1{
   font-size:2.4rem;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .hero h1 span{
@@ -50,47 +72,46 @@ body{
 }
 
 .card{
-  background:linear-gradient(180deg,var(--card),#0f1540);
+  background:linear-gradient(180deg,#151d55,#0f153d);
   border-radius:18px;
   padding:28px;
-  margin:24px 0;
-  box-shadow:0 0 30px rgba(0,0,0,.4);
+  margin:32px 0;
+  box-shadow:0 0 40px rgba(0,0,0,.45);
 }
 
-.badge{
-  display:inline-block;
-  background:var(--purple);
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:.85rem;
-  margin-bottom:10px;
-}
-
-.gem-box{
+.progress-title{
   text-align:center;
-  margin:30px 0;
+  font-size:1.6rem;
+  margin-bottom:20px;
 }
 
-.gem{
-  width:80px;
-  height:80px;
-  margin:auto;
-  background:linear-gradient(135deg,#9cf,#39f);
-  clip-path:polygon(50% 0%, 100% 30%, 80% 100%, 20% 100%, 0% 30%);
-  box-shadow:0 0 25px rgba(100,160,255,.8);
+.diamond-box{
+  text-align:center;
+  margin:24px 0;
+}
+
+.diamond{
+  font-size:64px;
+  filter:drop-shadow(0 0 20px #6cf);
 }
 
 .counter{
-  font-size:2.4rem;
+  font-size:2.6rem;
   color:var(--gold);
+  font-weight:800;
   margin-top:10px;
 }
 
-.progress{
+.sub{
+  font-size:.85rem;
+  opacity:.75;
+}
+
+.steps{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:14px;
-  margin-top:24px;
+  margin-top:28px;
 }
 
 .step{
@@ -98,12 +119,11 @@ body{
   border-radius:14px;
   padding:14px;
   text-align:center;
-  border:1px solid rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.06);
 }
 
 .step strong{
   color:var(--gold);
-  font-size:1.1rem;
 }
 
 ul{
@@ -116,22 +136,21 @@ ul li{
 
 .cta{
   text-align:center;
-  margin-top:30px;
+  margin-top:32px;
 }
 
 .btn{
   display:block;
-  width:100%;
-  max-width:420px;
+  max-width:460px;
   margin:14px auto;
   padding:18px;
   border-radius:16px;
   font-size:1.1rem;
-  font-weight:bold;
+  font-weight:800;
   text-decoration:none;
   color:#000;
-  background:linear-gradient(180deg,var(--gold),#e5b300);
-  box-shadow:0 8px 0 #a88400;
+  background:linear-gradient(180deg,var(--gold),#e0b200);
+  box-shadow:0 8px 0 #9c7a00;
 }
 
 .btn.alt{
@@ -139,33 +158,45 @@ ul li{
 }
 
 .small{
-  font-size:.85rem;
-  opacity:.8;
-  margin-top:8px;
+  font-size:.8rem;
+  opacity:.75;
+  margin-top:10px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="header">
+  <div class="container">
+    <div class="marquee">
+      <span>⚡ BÔNUS DE GEMAS</span>
+      <span>💎 PROGRESSÃO DIÁRIA</span>
+      <span>🔥 ATIVAÇÃO IMEDIATA</span>
+      <span>🚀 EVOLUÇÃO ACELERADA</span>
+      <span>⚡ BÔNUS DE GEMAS</span>
+      <span>💎 PROGRESSÃO DIÁRIA</span>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
-  <div class="hero">
-    <div class="badge">UPGRADE OPCIONAL</div>
+  <section class="hero">
     <h1>Ative o <span>Bônus Royal</span><br>e acelere suas gemas</h1>
-    <p>Sistema de progressão avançada que gera <strong>vantagens diárias equivalentes a gemas</strong> no seu ID.</p>
-  </div>
+    <p>Sistema avançado que gera <strong>vantagens diárias equivalentes a gemas</strong> direto no seu ID.</p>
+  </section>
 
-  <div class="card">
-    <h2>Veja como suas gemas evoluem diariamente</h2>
+  <section class="card">
+    <div class="progress-title">Veja como suas gemas evoluem</div>
 
-    <div class="gem-box">
-      <div class="gem"></div>
+    <div class="diamond-box">
+      <div class="diamond">💎</div>
       <div class="counter" id="counter">+120</div>
-      <div class="small">equivalente diário em gemas</div>
+      <div class="sub">equivalente diário em gemas</div>
     </div>
 
-    <div class="progress">
+    <div class="steps">
       <div class="step"><strong>Dia 1</strong><br>+120</div>
       <div class="step"><strong>Dia 3</strong><br>+360</div>
       <div class="step"><strong>Dia 7</strong><br>+840</div>
@@ -173,21 +204,21 @@ ul li{
     </div>
 
     <p class="small">Valores ilustrativos de progressão equivalente a gemas.</p>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>O que você desbloqueia</h2>
+  <section class="card">
+    <h2>O que esse bônus libera</h2>
     <ul>
       <li>Vantagens diárias equivalentes a gemas</li>
-      <li>Evolução muito mais rápida de cartas e eventos</li>
-      <li>Funciona junto com o elixir infinito</li>
-      <li>Sem compras dentro do jogo</li>
-      <li>Ativação direta no seu ID</li>
+      <li>Progressão contínua e acumulativa</li>
+      <li>Economia total com gemas oficiais</li>
+      <li>Funciona junto com elixir infinito</li>
+      <li>Ativação rápida no seu ID</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>Escolha como ativar</h2>
+  <section class="card">
+    <h2>Escolha como ativar agora</h2>
 
     <div class="cta">
       <a class="btn" href="https://ambienteseguro.org.ua/c/fedd95f21c">
@@ -202,7 +233,7 @@ ul li{
         A maioria dos jogadores ativa o bônus completo para acelerar tudo de uma vez.
       </div>
     </div>
-  </div>
+  </section>
 
 </div>
 
@@ -210,10 +241,11 @@ ul li{
 let base = 120;
 let el = document.getElementById("counter");
 let current = 0;
+
 setInterval(()=>{
-  current += 5;
+  current += 6;
   if(current > base) current = 0;
-  el.innerText = "+"+(base+current);
+  el.innerText = "+" + (base + current);
 },120);
 </script>
 
